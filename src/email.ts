@@ -12,7 +12,7 @@ export async function sendRejectionEmail(
   const { subject, body } = renderTemplate(template, companyName, jobTitle);
 
   await resend.emails.send({
-    from: `${companyName} <onboarding@resend.dev>`,
+    from: `${companyName} <rejections@balajileninrajan.dev>`,
     to: email,
     subject,
     text: `${body}
