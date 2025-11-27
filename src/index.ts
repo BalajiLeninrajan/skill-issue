@@ -58,6 +58,10 @@ export default {
           return Response.json({ error: "Invalid email format" }, { status: 400 });
         }
 
+        if (email.length > 254 || companyName.length > 200 || jobTitle.length > 200) {
+          return Response.json({ error: "Input too long" }, { status: 400 });
+        }
+
         const id = generateId();
         const scheduledAt = Math.floor(Date.now() / 1000) + getRandomDelay();
 
