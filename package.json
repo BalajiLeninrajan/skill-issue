@@ -1,0 +1,17 @@
+{
+  "name": "skill-issue",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251126.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "resend": "^6.5.2",
+    "wrangler": "^4.51.0"
+  }
+}
