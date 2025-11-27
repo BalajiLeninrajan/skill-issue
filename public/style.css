@@ -6,8 +6,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f5f5f5;
-  color: #333;
+  background: #0a0a0a;
+  color: #e5e5e5;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -16,9 +16,9 @@ body {
 }
 
 main {
-  background: white;
+  background: #171717;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   max-width: 480px;
   width: 100%;
   padding: 40px;
@@ -32,12 +32,12 @@ header {
 h1 {
   font-size: 2rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #fafafa;
   margin-bottom: 8px;
 }
 
 .tagline {
-  color: #666;
+  color: #a3a3a3;
   font-size: 1rem;
 }
 
@@ -49,7 +49,7 @@ label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #444;
+  color: #d4d4d4;
   margin-bottom: 6px;
 }
 
@@ -57,18 +57,20 @@ input {
   width: 100%;
   padding: 12px 14px;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  background: #262626;
+  border: 1px solid #404040;
   border-radius: 6px;
+  color: #fafafa;
   transition: border-color 0.2s;
 }
 
 input:focus {
   outline: none;
-  border-color: #666;
+  border-color: #737373;
 }
 
 input::placeholder {
-  color: #aaa;
+  color: #737373;
 }
 
 button {
@@ -83,17 +85,18 @@ button {
 }
 
 #submit-btn {
-  background: #2563eb;
+  background: #dc2626;
   color: white;
   margin-top: 12px;
 }
 
 #submit-btn:hover {
-  background: #1d4ed8;
+  background: #ef4444;
 }
 
 #submit-btn:disabled {
-  background: #93c5fd;
+  background: #991b1b;
+  color: #fca5a5;
   cursor: not-allowed;
 }
 
@@ -112,48 +115,48 @@ button {
 
 #confirmation h2 {
   font-size: 1.5rem;
-  color: #1a1a1a;
+  color: #fafafa;
   margin-bottom: 8px;
 }
 
 #confirmation .subtitle {
   font-size: 1.125rem;
-  color: #666;
+  color: #a3a3a3;
   margin-bottom: 24px;
 }
 
 .fine-print {
   font-size: 0.875rem;
-  color: #888;
+  color: #737373;
   line-height: 1.5;
   margin-bottom: 24px;
 }
 
 #reset-btn {
-  background: #f3f4f6;
-  color: #333;
+  background: #262626;
+  color: #e5e5e5;
 }
 
 #reset-btn:hover {
-  background: #e5e7eb;
+  background: #333333;
 }
 
 footer {
   margin-top: 32px;
   padding-top: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #262626;
   text-align: center;
 }
 
 footer p {
   font-size: 0.8rem;
-  color: #999;
+  color: #737373;
 }
 
 .error {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #dc2626;
+  background: #450a0a;
+  border: 1px solid #7f1d1d;
+  color: #fca5a5;
   padding: 12px;
   border-radius: 6px;
   margin-bottom: 16px;
