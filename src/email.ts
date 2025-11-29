@@ -18,6 +18,6 @@ export async function sendRejectionEmail(
     text: `${body}
 
 ---
-This is an email from skill issue. No real company rejected you. Yet.`,
+This is an email from skill issue (https://skill-issue.bleninrajan.workers.dev/). No real company rejected you. Yet.`,
   });
 }
