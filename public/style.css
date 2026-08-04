@@ -14,8 +14,8 @@
   --mauve: #cba6f7;
 
   /* Neumorphic shadow pair */
-  --shadow-dark: rgba(9, 9, 15, 0.85);
-  --shadow-light: rgba(205, 214, 244, 0.06);
+  --shadow-dark: rgba(9, 9, 15, 0.4);
+  --shadow-light: rgba(205, 214, 244, 0.025);
 }
 
 * {
@@ -36,14 +36,9 @@ body {
 }
 
 main {
-  background: var(--base);
-  border-radius: 28px;
-  box-shadow:
-    10px 10px 24px var(--shadow-dark),
-    -10px -10px 24px var(--shadow-light);
   max-width: 480px;
   width: 100%;
-  padding: 40px;
+  padding: 40px 20px;
 }
 
 header {
@@ -84,16 +79,16 @@ input {
   border-radius: 14px;
   color: var(--text);
   box-shadow:
-    inset 5px 5px 10px var(--shadow-dark),
-    inset -5px -5px 10px var(--shadow-light);
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light);
   transition: box-shadow 0.2s;
 }
 
 input:focus {
   outline: none;
   box-shadow:
-    inset 5px 5px 10px var(--shadow-dark),
-    inset -5px -5px 10px var(--shadow-light),
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light),
     0 0 0 2px var(--mauve);
 }
 
@@ -117,8 +112,8 @@ button {
   color: var(--crust);
   margin-top: 12px;
   box-shadow:
-    6px 6px 14px var(--shadow-dark),
-    -6px -6px 14px var(--shadow-light);
+    3px 3px 9px var(--shadow-dark),
+    -3px -3px 9px var(--shadow-light);
 }
 
 #submit-btn:hover {
@@ -128,8 +123,8 @@ button {
 #submit-btn:active {
   filter: brightness(0.95);
   box-shadow:
-    inset 4px 4px 10px rgba(9, 9, 15, 0.35),
-    inset -4px -4px 10px rgba(255, 255, 255, 0.12);
+    inset 3px 3px 7px rgba(9, 9, 15, 0.22),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.1);
 }
 
 #submit-btn:disabled {
@@ -138,8 +133,8 @@ button {
   filter: none;
   cursor: not-allowed;
   box-shadow:
-    inset 4px 4px 10px var(--shadow-dark),
-    inset -4px -4px 10px var(--shadow-light);
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light);
 }
 
 #confirmation {
@@ -178,8 +173,8 @@ button {
   background: var(--base);
   color: var(--mauve);
   box-shadow:
-    6px 6px 14px var(--shadow-dark),
-    -6px -6px 14px var(--shadow-light);
+    3px 3px 9px var(--shadow-dark),
+    -3px -3px 9px var(--shadow-light);
 }
 
 #reset-btn:hover {
@@ -188,8 +183,8 @@ button {
 
 #reset-btn:active {
   box-shadow:
-    inset 4px 4px 10px var(--shadow-dark),
-    inset -4px -4px 10px var(--shadow-light);
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light);
 }
 
 footer {
@@ -238,6 +233,6 @@ footer a:hover img {
   margin-bottom: 16px;
   font-size: 0.875rem;
   box-shadow:
-    inset 4px 4px 10px var(--shadow-dark),
-    inset -4px -4px 10px var(--shadow-light);
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light);
 }
