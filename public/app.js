@@ -57,7 +57,7 @@ resetBtn.addEventListener("click", () => {
 
 function showError(message) {
   const errorDiv = document.createElement("div");
-  errorDiv.className = "error";
+  errorDiv.className = "error banner cn-tone-red";
   errorDiv.textContent = message;
   form.insertBefore(errorDiv, form.firstChild);
 }
