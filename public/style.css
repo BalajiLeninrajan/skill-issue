@@ -1,7 +1,10 @@
 /* ── skill-issue: app-specific layer ────────────────────────────────────────
    Tokens, utilities, and recipes come from catppuccin-neu (vendored in
    /css/, synced via `catppuccin-neu-sync public/css`). This file holds only
-   the page layout and app glue; every value below reads the system tokens. */
+   the page layout and app glue; every value below reads the system tokens.
+   Note: /css/index.css is vendored by the sync script but intentionally
+   unlinked — index.html links tokens/utilities/recipes directly; never link
+   index.css in addition, or the same rules load twice. */
 
 /* Single centered column */
 body {
@@ -30,9 +33,9 @@ header h1 {
   margin: 0 auto;
 }
 
-/* Card interior — the panel itself stays canonical, padding lives here */
-#form-container,
-#confirmation {
+/* Card interior — the recipe's .panel carries no padding; main .panel keeps
+   this override specificity-safe regardless of stylesheet order */
+main .panel {
   padding: 28px 24px;
 }
 
