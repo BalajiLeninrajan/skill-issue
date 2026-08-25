@@ -33,12 +33,6 @@ header h1 {
   margin: 0 auto;
 }
 
-/* Card interior — the recipe's .panel carries no padding; main .panel keeps
-   this override specificity-safe regardless of stylesheet order */
-main .panel {
-  padding: 28px 24px;
-}
-
 .field {
   margin-bottom: 18px;
 }
