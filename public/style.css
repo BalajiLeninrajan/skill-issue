@@ -1,10 +1,7 @@
 /* ── skill-issue: app-specific layer ────────────────────────────────────────
-   Tokens, utilities, and recipes come from catppuccin-neu (vendored in
-   /css/, synced via `catppuccin-neu-sync public/css`). This file holds only
-   the page layout and app glue; every value below reads the system tokens.
-   Note: /css/index.css is vendored by the sync script but intentionally
-   unlinked — index.html links tokens/utilities/recipes directly; never link
-   index.css in addition, or the same rules load twice. */
+   Tokens, utilities, and recipes come from catppuccin-neu, loaded from the
+   jsDelivr CDN via its index.css (see index.html). This file holds only the
+   page layout and app glue; every value below reads the system tokens. */
 
 /* Single centered column */
 body {
@@ -37,13 +34,12 @@ header h1 {
   margin-bottom: 18px;
 }
 
+/* Buttons sit at natural width, centered under their content */
 #submit-btn,
 #reset-btn {
-  width: 100%;
-}
-
-#submit-btn {
-  margin-top: 6px;
+  display: flex;
+  width: fit-content;
+  margin: 48px auto 0;
 }
 
 /* Error banner spawned by app.js (classes: error banner cn-tone-red) */
