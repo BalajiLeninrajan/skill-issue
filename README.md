@@ -24,7 +24,7 @@ bunx wrangler d1 execute skill-issue-db --local --file=schema.sql
 cp .dev.vars.example .dev.vars
 # Edit .dev.vars with your Resend API key
 
-# Run dev server (syncs design-system CSS into public/css first)
+# Run dev server
 bun run dev
 
 # Test scheduled job (sends pending emails)
@@ -44,7 +44,7 @@ bunx wrangler d1 execute skill-issue-db --file=schema.sql
 # Set Resend API key
 bunx wrangler secret put RESEND_API_KEY
 
-# Deploy (syncs design-system CSS into public/css first)
+# Deploy
 bun run deploy
 ```
 

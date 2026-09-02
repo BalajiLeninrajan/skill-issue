@@ -37,6 +37,3 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Wrangler
 .wrangler
-
-# generated from the catppuccin-neu package by `bun run sync`
-public/css/
