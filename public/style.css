@@ -1,117 +1,21 @@
 /* ── skill-issue: app-specific layer ────────────────────────────────────────
    Tokens, utilities, and recipes come from catppuccin-neu, loaded from the
-   jsDelivr CDN via its index.css (see index.html). This file holds only the
-   page layout and app glue; every value below reads the system tokens. */
+   jsDelivr CDN via its index.css (see index.html). Page layout is classes on
+   the elements; this file holds only what the system does not ship. */
 
-/* Single centered column */
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
-}
-
-main {
-  width: 100%;
-  max-width: 480px;
-}
-
-/* Header */
-header {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-header h1 {
-  margin-bottom: 10px;
-}
-
-.tagline {
-  margin: 0 auto;
-}
-
-.field {
-  margin-bottom: 18px;
-}
-
-/* Buttons sit at natural width, centered under their content */
-#submit-btn,
-#reset-btn {
-  display: flex;
-  width: fit-content;
-  margin: 48px auto 0;
-}
-
-/* Error banner spawned by app.js (classes: error banner cn-tone-red) */
-.error {
-  margin: 0 0 18px;
-}
-
-/* Confirmation state */
-#confirmation {
-  text-align: center;
-}
-
+/* Confirmation state: the emoji hero */
 .confirmation-icon {
   font-size: 4rem;
   line-height: 1;
-  margin-bottom: 14px;
 }
 
-#confirmation h2 {
-  margin-bottom: 6px;
-}
-
-.subtitle {
-  margin: 0 auto 18px;
-}
-
-.fine-print {
-  margin: 0 0 22px;
-}
-
-/* JS visibility toggle — app.js contract */
-.hidden {
-  display: none !important;
-}
-
-/* Footer — divider-only, per canon */
-footer {
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid var(--surface-0);
-  text-align: center;
-}
-
-footer p {
-  margin: 0;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--overlay-1);
-}
-
-footer p + p {
-  margin-top: 10px;
-}
-
-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--subtext-0);
-  text-decoration: none;
-  transition: color .16s;
-}
-
-footer a:hover {
-  color: var(--mauve);
-}
-
-footer a img {
+/* Footer mark: the GitHub glyph is an img, not an svg, so the recipe
+   cannot size or tone it */
+.footer-neu img {
   opacity: .7;
-  transition: opacity .16s;
+  transition: opacity var(--t-fast) var(--ease-out);
 }
 
-footer a:hover img {
+.footer-neu a:hover img {
   opacity: 1;
 }

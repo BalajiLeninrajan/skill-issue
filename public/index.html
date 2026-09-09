@@ -9,18 +9,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/BalajiLeninrajan/catppuccin-neu@v0.1.5/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/BalajiLeninrajan/catppuccin-neu@v0.3.0/css/index.css">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="app-shell">
-  <main class="page-enter">
-    <header>
-      <h1 class="cn-display-sm">Skill <em>Issue</em></h1>
-      <p class="cn-lede tagline">It’s not the job market. It’s you.</p>
+<body class="app-shell" style="--page-width: 480px">
+  <main class="page-main page-enter">
+    <header class="cn-mb-28 cn-text-center">
+      <h1 class="cn-display-sm cn-mb-12">Skill <em>Issue</em></h1>
+      <p class="cn-lede cn-mb-0">It’s not the job market. It’s you.</p>
     </header>
 
     <div id="form-container">
-      <form id="hope-form">
+      <form id="hope-form" class="cn-stack cn-gap-16">
         <div class="field">
           <label for="company">Company Name</label>
           <input type="text" id="company" name="company" required placeholder="TechCorp Inc." maxlength="200" autocomplete="organization">
@@ -36,23 +36,31 @@
           <input type="email" id="email" name="email" required placeholder="hopeful@example.com" maxlength="254" autocomplete="email">
         </div>
 
-        <button type="submit" id="submit-btn" class="btn btn-primary">I Have Hope</button>
+        <div class="cn-row cn-center cn-mt-28">
+          <button type="submit" id="submit-btn" class="btn btn-primary">I Have Hope</button>
+        </div>
       </form>
     </div>
 
-    <div id="confirmation" class="hidden">
-      <div class="confirmation-icon" aria-hidden="true">📋</div>
-      <h2 class="cn-title">Hope registered.</h2>
-      <p class="cn-lede subtitle">Disappointment scheduled.</p>
-      <p class="cn-copy fine-print">You will receive a rejection email within 2-48 hours. Please check your spam folder, as our rejections are often mistaken for real corporate communications.</p>
-      <button id="reset-btn" class="btn btn-secondary">Register More Hope</button>
+    <div id="confirmation" class="cn-hidden cn-text-center">
+      <div class="confirmation-icon cn-mb-12" aria-hidden="true">📋</div>
+      <h2 class="cn-title cn-mb-4">Hope registered.</h2>
+      <p class="cn-lede cn-mb-16">Disappointment scheduled.</p>
+      <p class="cn-copy cn-mb-0">You will receive a rejection email within 2-48 hours. Please check your spam folder, as our rejections are often mistaken for real corporate communications.</p>
+      <div class="cn-row cn-center cn-mt-28">
+        <button id="reset-btn" class="btn btn-secondary">Register More Hope</button>
+      </div>
     </div>
-
-    <footer>
-      <p>A therapeutic service for job seekers who prefer to skip the wait for rejection.</p>
-      <p><a href="https://github.com/BalajiLeninrajan/skill-issue" target="_blank" rel="noopener" aria-label="GitHub"><img src="/github-mark-white.svg" alt="" width="12" height="12">GitHub</a></p>
-    </footer>
   </main>
+
+  <footer class="footer-neu cn-center cn-text-center">
+    <div class="cn-stack cn-gap-8 cn-w-full">
+      <p class="cn-block">A therapeutic service for job seekers who prefer to skip the wait for rejection.</p>
+      <div class="cn-row cn-center">
+        <a href="https://github.com/BalajiLeninrajan/skill-issue" target="_blank" rel="noopener" aria-label="GitHub" class="btn-text cn-row"><img src="/github-mark-white.svg" alt="" width="12" height="12" class="cn-icon-sm">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="/app.js"></script>
 </body>
