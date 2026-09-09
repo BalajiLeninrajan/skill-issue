@@ -38,8 +38,8 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.error || "Something went wrong");
     }
 
-    formContainer.classList.add("hidden");
-    confirmation.classList.remove("hidden");
+    formContainer.classList.add("cn-hidden");
+    confirmation.classList.remove("cn-hidden");
   } catch (err) {
     showError(err.message);
     submitBtn.disabled = false;
@@ -49,8 +49,8 @@ form.addEventListener("submit", async (e) => {
 
 resetBtn.addEventListener("click", () => {
   form.reset();
-  confirmation.classList.add("hidden");
-  formContainer.classList.remove("hidden");
+  confirmation.classList.add("cn-hidden");
+  formContainer.classList.remove("cn-hidden");
   submitBtn.disabled = false;
   submitBtn.textContent = "I Have Hope";
 });
