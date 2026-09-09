@@ -9,6 +9,12 @@
   line-height: 1;
 }
 
+/* The reset button on the confirmation screen drops the secondary
+   recipe's hairline; the hard offset alone finds its edge. */
+#reset-btn {
+  border-color: transparent;
+}
+
 /* Footer mark: the GitHub glyph is an img, not an svg, so the recipe
    cannot size or tone it */
 .footer-neu img {
