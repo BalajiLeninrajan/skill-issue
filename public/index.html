@@ -11,44 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/BalajiLeninrajan/catppuccin-neu@v0.4.0/css/index.css">
   <style>
-    /* The page is the form plus a preview of the rejection it sends.
-       Only the two-column split and the caret are custom. */
-
-    /* Form left, the rejection preview right. One column below 900px. */
+    /* The heading on the left, the form on the right. One column below 900px.
+       Top-anchored so the heading holds still when the form collapses to one
+       button on confirm. */
     .si-page {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
-      grid-template-areas: "intro preview" "form preview";
       column-gap: calc(var(--space-6) * 2);
       row-gap: var(--space-6);
-      align-content: start;
+      align-items: start;
       padding-block-start: calc(var(--space-6) * 3);
     }
-    /* Top-anchored so the heading and preview hold still when the form
-       collapses to one button on confirm. */
-    .si-intro { grid-area: intro; }
-    .si-form { grid-area: form; align-self: start; }
-    .si-preview { grid-area: preview; align-self: start; }
     @media (max-width: 900px) {
-      .si-page { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "form" "preview"; padding-block-start: 0; }
-    }
-
-    /* The caret sits after the company name in the preview subject: the
-       rejection is still being written. Salt's cadence. Gone once scheduled. */
-    .si-caret {
-      display: inline-block; width: 7px; height: 1.05em; margin-left: 3px;
-      vertical-align: text-bottom;
-      background: var(--mauve); opacity: .8;
-      animation: blink 1.15s step-end infinite;
-    }
-    [data-state="confirm"] .si-caret { display: none; }
-    /* Reduced motion: a solid caret that stays visible. */
-    @media (prefers-reduced-motion: reduce) {
-      .si-caret { animation: none; opacity: .8; }
+      .si-page { grid-template-columns: minmax(0, 1fr); padding-block-start: 0; }
     }
   </style>
 </head>
-<body class="app-shell" data-density="compact" data-state="form">
+<body class="app-shell" data-state="form">
   <header class="topbar is-split">
     <span class="wordmark">Skill<em>&nbsp;Issue</em></span>
     <a class="btn btn-ghost is-sm" href="https://github.com/BalajiLeninrajan/skill-issue" target="_blank" rel="noopener">
@@ -86,19 +65,6 @@
       <button type="button" class="btn btn-secondary" id="reset-btn">Register more hope</button>
     </div>
 
-    <aside class="panel is-tilted si-preview" aria-label="A sample of the email you will get">
-      <div class="panel-header">
-        <h2>One of the rejections</h2>
-        <span class="tag cn-tone-mauve" id="status">Draft</span>
-      </div>
-      <div class="panel-body cn-stack cn-gap-12">
-        <dl class="kv cn-m-0">
-          <dt>From</dt><dd><span data-fill="company">TechCorp Inc.</span></dd>
-          <dt>Subject</dt><dd>Your Application to <span data-fill="company">TechCorp Inc.</span><span class="si-caret" aria-hidden="true"></span></dd>
-        </dl>
-        <p class="cn-copy cn-m-0">Thank you for your interest in the <span data-fill="job">Senior Software Engineer</span> position. After careful consideration by our team, and a brief consultation with our office plants, we regret to inform you that we will not be moving forward.</p>
-      </div>
-    </aside>
   </main>
 
   <footer class="page-footer" style="--page-width: 1040px">

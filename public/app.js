@@ -23,14 +23,6 @@ const errors = {
   server: "Something broke on our side, so give it a minute and send again.",
 };
 
-// The preview fills in as the user types. The placeholders stand in until then.
-function fill() {
-  const c = company.value.trim() || "TechCorp Inc.";
-  const j = jobTitle.value.trim() || "Senior Software Engineer";
-  document.querySelectorAll('[data-fill="company"]').forEach((n) => (n.textContent = c));
-  document.querySelectorAll('[data-fill="job"]').forEach((n) => (n.textContent = j));
-}
-
 function show(state, lede, invalid = [], heading = state) {
   document.body.dataset.state = state;
   $("#si-heading").innerHTML = headings[heading];
@@ -43,10 +35,6 @@ function show(state, lede, invalid = [], heading = state) {
     else input.removeAttribute("aria-invalid");
   }
   $("#email-help").textContent = invalid.includes(email) ? EMAIL_FIX : EMAIL_HELP;
-
-  const tag = $("#status");
-  tag.textContent = state === "confirm" ? "Scheduled" : "Draft";
-  tag.className = "tag " + (state === "confirm" ? "cn-tone-green" : "cn-tone-mauve");
 }
 
 function showForm() {
@@ -67,7 +55,6 @@ function fail(kind, invalid = []) {
 }
 
 form.addEventListener("input", (e) => {
-  fill();
   // Editing a flagged field clears its flag. Once no field is flagged, the
   // error copy goes back to the form's own.
   if (e.target.getAttribute("aria-invalid") !== "true") return;
@@ -123,7 +110,6 @@ form.addEventListener("submit", async (e) => {
 
 resetBtn.addEventListener("click", () => {
   form.reset();
-  fill();
   showForm();
   company.focus();
 });
