@@ -11,11 +11,11 @@
 
 /* Footer mark: the GitHub glyph is an img, not an svg, so the recipe
    cannot size or tone it */
-.footer-neu img {
+.page-footer img {
   opacity: .7;
   transition: opacity var(--t-fast) var(--ease-out);
 }
 
-.footer-neu a:hover img {
+.page-footer a:hover img {
   opacity: 1;
 }
