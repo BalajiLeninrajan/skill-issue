@@ -31,9 +31,9 @@ function fill() {
   document.querySelectorAll('[data-fill="job"]').forEach((n) => (n.textContent = j));
 }
 
-function show(state, lede, invalid = []) {
+function show(state, lede, invalid = [], heading = state) {
   document.body.dataset.state = state;
-  $("#si-heading").innerHTML = headings[state];
+  $("#si-heading").innerHTML = headings[heading];
   $("#si-lede").textContent = lede;
   form.classList.toggle("cn-hidden", state === "confirm");
   $("#again").classList.toggle("cn-hidden", state !== "confirm");
@@ -58,13 +58,23 @@ function setBusy(busy) {
   submitBtn.setAttribute("aria-busy", String(busy));
 }
 
+// Only a bad address "bounces". Other failures keep the form heading and
+// explain themselves in the lede.
 function fail(kind, invalid = []) {
   setBusy(false);
-  show("error", errors[kind], invalid);
+  show("error", errors[kind], invalid, kind === "email" ? "error" : "form");
   (invalid[0] || submitBtn).focus();
 }
 
-form.addEventListener("input", fill);
+form.addEventListener("input", (e) => {
+  fill();
+  // Editing a flagged field clears its flag. Once no field is flagged, the
+  // error copy goes back to the form's own.
+  if (e.target.getAttribute("aria-invalid") !== "true") return;
+  e.target.removeAttribute("aria-invalid");
+  if (e.target === email) $("#email-help").textContent = EMAIL_HELP;
+  if (document.body.dataset.state === "error" && !form.querySelector('[aria-invalid="true"]')) showForm();
+});
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
