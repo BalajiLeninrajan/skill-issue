@@ -8,14 +8,3 @@
   font-size: 4rem;
   line-height: 1;
 }
-
-/* Footer mark: the GitHub glyph is an img, not an svg, so the recipe
-   cannot size or tone it */
-.page-footer img {
-  opacity: .7;
-  transition: opacity var(--t-fast) var(--ease-out);
-}
-
-.page-footer a:hover img {
-  opacity: 1;
-}
