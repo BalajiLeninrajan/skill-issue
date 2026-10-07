@@ -49,6 +49,8 @@ function setBusy(busy) {
 // Only a bad address "bounces". Other failures keep the form heading and
 // explain themselves in the lede.
 function fail(kind, invalid = []) {
+  // The failure kind only. Never what was typed.
+  posthog.capture("register_hope_failed", { reason: kind });
   setBusy(false);
   show("error", errors[kind], invalid, kind === "email" ? "error" : "form");
   (invalid[0] || submitBtn).focus();
@@ -90,6 +92,7 @@ form.addEventListener("submit", async (e) => {
     const data = await response.json().catch(() => ({}));
 
     if (response.ok) {
+      posthog.capture("register_hope");
       show("confirm", `It reaches ${body.email} within 48 hours, so check spam before you get excited.`);
       resetBtn.focus();
     } else if (data.error === "Invalid email format") {
@@ -106,6 +109,10 @@ form.addEventListener("submit", async (e) => {
   } finally {
     setBusy(false);
   }
+});
+
+$("#repo-link").addEventListener("click", () => {
+  posthog.capture("open_repo", { location: "topbar" });
 });
 
 resetBtn.addEventListener("click", () => {
