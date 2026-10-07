@@ -26,11 +26,19 @@
       .si-page { grid-template-columns: minmax(0, 1fr); padding-block-start: 0; }
     }
   </style>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_zSX6drBG3mEQYboqHpWNu9L7AW3ZzRPhFGoS68asCHQz', {
+      api_host: 'https://us.i.posthog.com',
+      defaults: '2026-05-30',
+      cookieless_mode: 'always',
+    })
+  </script>
 </head>
 <body class="app-shell" data-state="form">
   <header class="topbar is-split">
     <span class="wordmark">Skill<em>&nbsp;Issue</em></span>
-    <a class="btn btn-ghost is-sm" href="https://github.com/BalajiLeninrajan/skill-issue" target="_blank" rel="noopener">
+    <a class="btn btn-ghost is-sm" id="repo-link" href="https://github.com/BalajiLeninrajan/skill-issue" target="_blank" rel="noopener">
       <svg viewBox="0 0 98 96" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>
       GitHub
     </a>
@@ -39,10 +47,10 @@
   <main class="page-main page-enter si-page" style="--page-width: 1040px">
     <header class="si-intro">
       <h1 class="cn-display is-sm" id="si-heading">Tell us where you <em>applied</em>. We send the <em>rejection</em>.</h1>
-      <p class="cn-lede cn-mt-12 cn-mb-0" id="si-lede" aria-live="polite">It lands in your inbox within 48 hours, so you can stop refreshing.</p>
+      <p class="cn-lede cn-mt-12 cn-mb-0 ph-no-capture" id="si-lede" aria-live="polite">It lands in your inbox within 48 hours, so you can stop refreshing.</p>
     </header>
 
-    <form class="si-form cn-stack cn-gap-16" id="hope-form" novalidate>
+    <form class="si-form cn-stack cn-gap-16" id="hope-form" method="post" novalidate>
       <div class="field">
         <label for="company">Company</label>
         <input type="text" id="company" name="company" required placeholder="TechCorp Inc." maxlength="200" autocomplete="organization">
