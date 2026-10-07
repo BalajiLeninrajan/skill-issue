@@ -112,7 +112,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 $("#repo-link").addEventListener("click", (e) => {
-  posthog.capture("outbound_link", { url: e.currentTarget.href, location: "topbar" });
+  posthog.capture("outbound_link", { destination: "github", location: "topbar" });
 });
 
 resetBtn.addEventListener("click", () => {
