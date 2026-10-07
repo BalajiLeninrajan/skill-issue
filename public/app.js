@@ -111,8 +111,8 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-$("#repo-link").addEventListener("click", () => {
-  posthog.capture("open_repo", { location: "topbar" });
+$("#repo-link").addEventListener("click", (e) => {
+  posthog.capture("outbound_link", { url: e.currentTarget.href, location: "topbar" });
 });
 
 resetBtn.addEventListener("click", () => {

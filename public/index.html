@@ -47,10 +47,10 @@
   <main class="page-main page-enter si-page" style="--page-width: 1040px">
     <header class="si-intro">
       <h1 class="cn-display is-sm" id="si-heading">Tell us where you <em>applied</em>. We send the <em>rejection</em>.</h1>
-      <p class="cn-lede cn-mt-12 cn-mb-0" id="si-lede" aria-live="polite">It lands in your inbox within 48 hours, so you can stop refreshing.</p>
+      <p class="cn-lede cn-mt-12 cn-mb-0 ph-no-capture" id="si-lede" aria-live="polite">It lands in your inbox within 48 hours, so you can stop refreshing.</p>
     </header>
 
-    <form class="si-form cn-stack cn-gap-16" id="hope-form" novalidate>
+    <form class="si-form cn-stack cn-gap-16" id="hope-form" method="post" novalidate>
       <div class="field">
         <label for="company">Company</label>
         <input type="text" id="company" name="company" required placeholder="TechCorp Inc." maxlength="200" autocomplete="organization">
